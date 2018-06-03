@@ -16,6 +16,6 @@ export class DashboardComponent implements OnInit {
   public logout():any{
     //to clear the Dashboard
     window.localStorage.removeItem("login_details");
-    this._router.navigate(["/login"])//to navigate back to login page
+    this._router.navigate(["/"])//to navigate back to login page
   }
 }
