@@ -8,6 +8,10 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AboutComponent } from './component/about/about.component';
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { RouterModule } from '@angular/router';
+import { LoginService } from './services/login.service';
+import { DashboardService } from './services/dashboard.service';
+import { appRoutes } from './routes/app.routes';
 
 
 @NgModule({
@@ -20,9 +24,9 @@ import { ContactComponent } from './component/contact/contact.component';
     ContactComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,RouterModule
   ],
-  providers: [],
+  providers: [DashboardService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
