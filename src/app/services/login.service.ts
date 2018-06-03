@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http ,Response } from '@angular/http'; //http=>to hit the server,Response=>response will be of Response type
 import 'rxjs/Rx'; //map,catch and throw function
-import { Observable } from 'rxjs/observable';//Observable=> to throw the error
+import { Observable } from 'rxjs/Observable';//Observable=> to throw the error
 
 @Injectable()
 export class LoginService {
@@ -18,4 +18,4 @@ export class LoginService {
   console.log(error);
   return Observable.throw(error || "Internal Server Error");
   }
-  }
+}

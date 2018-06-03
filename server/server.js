@@ -1,6 +1,6 @@
 //importing modules
 var express = require("express");
-var myqsl = reqire("mysql");
+var mysql = require("mysql");
 var mongodb = require("mongodb");
 var jwt = require("jwt-simple");
 var bodyparser = require("body-parser");
@@ -23,10 +23,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 
 //create the connection object
-var connection = myqsl.createConnection({host:"localhost",
-                                        name:"root",
+var connection = mysql.createConnection({host:"localhost",
+                                        user:"root",
                                         password:"root",
-                                        database:"angularPoc"});
+                                        database:"pocangular2"});
 //Connect to Database
 connection.connect();
 //create the array to store the generated token(in rea time we store token in databse)
@@ -41,9 +41,10 @@ app.post("/login",function(req,res){
     function(err,recordsArray,fields){
         if(recordsArray.length > 0){
             var token = jwt.encode({'uname':uname,'upwd':upwd},'hr@nodejs.in');
-            token.push({login:'success',token:token});
+            token.push(token);
+            res.send({login:'success',token:token});
         }else{
-                res.send({"login":failed});
+                res.send({login:"failed"});
         }
     });
 });

@@ -13,6 +13,8 @@ import { LoginService } from './services/login.service';
 import { DashboardService } from './services/dashboard.service';
 import { appRoutes } from './routes/app.routes';
 import {IndexComponent} from "./component/index/index.component";
+import {HttpModule} from "@angular/http";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -22,12 +24,16 @@ import {IndexComponent} from "./component/index/index.component";
     DashboardComponent,
     AboutComponent,
     PortfolioComponent,
-    ContactComponent
+    ContactComponent,
+    IndexComponent
   ],
   imports: [
-    BrowserModule,RouterModule
+    BrowserModule,
+    HttpModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [DashboardService,LoginService],
-  bootstrap: [AppComponent]
+  bootstrap: [IndexComponent]
 })
 export class AppModule { }
