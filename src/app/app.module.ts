@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { LoginService } from './services/login.service';
 import { DashboardService } from './services/dashboard.service';
 import { appRoutes } from './routes/app.routes';
+import {IndexComponent} from "./component/index/index.component";
 
 
 @NgModule({
