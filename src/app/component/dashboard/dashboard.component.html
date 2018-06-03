@@ -1,3 +1,7 @@
-<p>
-  dashboard works!
-</p>
+<a [routerLink] = "['about']"><b>About</b></a>&emsp14;
+<a [routerLink] = "['portfolio']"><b>Portfolio</b></a>&emsp14;
+<a [routerLink] = "['contact']"><b>Contact</b></a>&emsp14;
+<button (click) = "logout()">Logout</button>
+<br><br>
+
+<router-outlet></router-outlet>
