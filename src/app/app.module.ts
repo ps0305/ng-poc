@@ -7,6 +7,7 @@ import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AboutComponent } from './component/about/about.component';
 import { PortfolioComponent } from './component/portfolio/portfolio.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PortfolioComponent } from './component/portfolio/portfolio.component';
     LoginComponent,
     DashboardComponent,
     AboutComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule
