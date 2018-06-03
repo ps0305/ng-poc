@@ -39,15 +39,30 @@ app.post("/login",function(req,res){
     //match client uname n upwd with database credentials
     connection.query("select * from login_details where uname = '"+uname+"'and upwd = '"+upwd+"'",
     function(err,recordsArray,fields){
-        if(recordsArray.length > 0){
-            var token = jwt.encode({'uname':uname,'upwd':upwd},'hr@nodejs.in');
-            token.push(token);
+        if(recordsArray.length>0){
+            var token = jwt.encode({'uname':uname,'upwd':upwd},'hr@nodejs.in')
+            token.push = token;
             res.send({login:'success',token:token});
         }else{
                 res.send({login:"failed"});
         }
     });
 });
+
+//********************************************************** */
+
+//about RESt API
+app.post("/about",function(req,res){
+    var token = req.body.token;
+    if(token[0] == token){
+        connection.query("select * from products ",
+        function(err,recordsArray,fields){
+                res.send(recordsArray)});
+                   }else{
+                    res.send("Unauthorised Access");
+                }
+            });
+
 //********************************************************** */
 
 //Portfolio RESt API
@@ -69,7 +84,7 @@ app.post("/portfolio",function(req,res){
 //Contact RESt API
 app.post("/contact",function(req,res){
     var token = req.body.toekn;
-    if (token[0] == token){
+    if(token[0] == token){
         fs.readFile("../static/contact.json",function(err,data){
             res.send(data);
         })
