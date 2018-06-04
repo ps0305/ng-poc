@@ -9,6 +9,8 @@ var fs = require("fs");
 //create the RESt object or app instance
 var app = express();
 
+var router = express.Router();
+
 //enable the CORS
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -41,7 +43,7 @@ app.post("/login",function(req,res){
     function(err,recordsArray,fields){
         if(recordsArray.length>0){
             var token = jwt.encode({'uname':uname,'upwd':upwd},'hr@nodejs.in')
-            token.push = token;
+            token.Push(token);
             res.send({login:'success',token:token});
         }else{
                 res.send({login:"failed"});
@@ -70,7 +72,7 @@ app.post("/portfolio",function(req,res){
     var token = req.body.token;
     if(token[0] == token){
         miniProject.connect("mongodb://localhost:27017/pocAngular2",function(err,db){
-            db.collection("products").find.toArray(function(err,array){
+            db.collection("products").find().toArray(function(err,array){
                 res.send(array);
             });
         });
@@ -91,7 +93,8 @@ app.post("/contact",function(req,res){
     }else{
         res.send("Unauthorised user");
     }
-})
+});
+module.exports = router;
 
 //Assign Port no.
 app.listen(8080);

@@ -9,8 +9,8 @@ export class DashboardService {
   constructor(private _http:Http) { }
 
   public aboutData(){
-    return this._http.post("http://localhost:8080/about",{
-      'token':JSON.parse(window.localStorage.getItem("login_details")).token
+    return this._http.post("http://localhost:8080/about",
+    {'token':JSON.parse(window.localStorage.getItem("login_details")).token
     }).map((res:Response)=>{
       return res.json();
     }).catch(this._handleError);
