@@ -91,7 +91,7 @@ app.post("/portfolio",function(req,res){
 app.post("/contact",function(req,res){
     var token = req.body.token;
     if(tokenArr[0] == token){
-        fs.readFile("/static/static.json",function(err,data){
+        fs.readFile("../static/contact.json",function(err,data){
             res.send(data);
         });
     }else{

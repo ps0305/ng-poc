@@ -2,6 +2,7 @@ import {LoginComponent} from "../component/login/login.component";
 import {DashboardComponent} from "../component/dashboard/dashboard.component";
 import {AboutComponent} from "../component/about/about.component";
 import {PortfolioComponent} from "../component/portfolio/portfolio.component";
+import { ContactComponent } from "../component/contact/contact.component";
 import {Routes} from "@angular/router";
 
 
@@ -10,5 +11,6 @@ export const appRoutes:Routes=[
     {path:"",component:LoginComponent},
     {path:"dashboard",component:DashboardComponent,
     children:[{path:"about",component:AboutComponent},
-              {path:"portfolio",component:PortfolioComponent}]}
+              {path:"portfolio",component:PortfolioComponent},
+              {path:"contact",component:ContactComponent}]}
 ];
