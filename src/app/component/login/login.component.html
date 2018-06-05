@@ -1,11 +1,11 @@
 <div class="jumbotron jumbotron-fluid container">
 
-    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<input type="text" [(ngModel)]="uname">
+    <label>User Name</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<input class="input-group mb-3" type="text" [(ngModel)]="uname">
 
 <br><br>
-<label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<input type="password" [(ngModel)]="upwd">
+<label>Password</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<input class="input-group mb-3" type="password" [(ngModel)]="upwd">
 
 <br><br>
 <button class="btn btn-primary" (click)="login({uname:uname,upwd:upwd})">Login</button>
