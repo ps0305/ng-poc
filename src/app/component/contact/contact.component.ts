@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
