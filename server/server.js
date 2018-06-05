@@ -11,6 +11,9 @@ var app = express();
 
 var router = express.Router();
 
+//Create mongo client
+var miniProject = mongodb.MongoClient;
+
 //enable the CORS
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -32,7 +35,7 @@ var connection = mysql.createConnection({host:"localhost",
 //Connect to Database
 connection.connect();
 //create the array to store the generated token(in rea time we store token in databse)
-var token = [];
+var tokenArr = [];
 
 //Create the "/login" RESt API
 app.post("/login",function(req,res){
@@ -43,7 +46,7 @@ app.post("/login",function(req,res){
     function(err,recordsArray,fields){
         if(recordsArray.length>0){
             var token = jwt.encode({'uname':uname,'upwd':upwd},'hr@nodejs.in')
-            token.Push(token);
+            tokenArr.push(token);
             res.send({login:'success',token:token});
         }else{
                 res.send({login:"failed"});
@@ -56,10 +59,11 @@ app.post("/login",function(req,res){
 //about RESt API
 app.post("/about",function(req,res){
     var token = req.body.token;
-    if(token[0] == token){
+    if(tokenArr[0] == token){
         connection.query("select * from products ",
         function(err,recordsArray,fields){
-                res.send(recordsArray)});
+                res.send(recordsArray)
+            });
                    }else{
                     res.send("Unauthorised Access");
                 }
@@ -70,7 +74,7 @@ app.post("/about",function(req,res){
 //Portfolio RESt API
 app.post("/portfolio",function(req,res){
     var token = req.body.token;
-    if(token[0] == token){
+    if(tokenArr[0] == token){
         miniProject.connect("mongodb://localhost:27017/pocAngular2",function(err,db){
             db.collection("products").find().toArray(function(err,array){
                 res.send(array);
@@ -85,16 +89,15 @@ app.post("/portfolio",function(req,res){
 
 //Contact RESt API
 app.post("/contact",function(req,res){
-    var token = req.body.toekn;
-    if(token[0] == token){
-        fs.readFile("../static/contact.json",function(err,data){
+    var token = req.body.token;
+    if(tokenArr[0] == token){
+        fs.readFile("/static/static.json",function(err,data){
             res.send(data);
-        })
+        });
     }else{
         res.send("Unauthorised user");
     }
 });
-module.exports = router;
 
 //Assign Port no.
 app.listen(8080);
