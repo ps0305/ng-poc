@@ -1,3 +1,5 @@
+![angular-card](https://user-images.githubusercontent.com/34129569/41152709-1f6e8966-6b32-11e8-89d2-f791d638df7c.png)
+
 # PocAngular2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
