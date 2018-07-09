@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid container">
+<!-- <div class="jumbotron jumbotron-fluid container">
 
     <label>User Name</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <input class="input-group mb-3" type="text" [(ngModel)]="uname">
@@ -11,4 +11,75 @@
 <button class="btn btn-primary" (click)="login({uname:uname,upwd:upwd})">Login</button>
 
 </div>
+ -->
+<!-- Main Navigation -->
+<nav class="navbar navbar-dark bg-#59698d mdb-color lighten-1 navbar-expand-sm">
+    <div class="container">
+        <a class="navbar-brand text-warning" href="index.html">
+            <i class="fa fa-angular"></i> Angular POC</a>
+    </div>
+</nav>
 
+<!-- Login Section -->
+<div class="p-2 bg-teal text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    <i class="fa fa-snowflake"></i> Angular POC</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Login Form -->
+<div class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Empty -->
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-#00b0ff light-blue accent-3 text-white">
+                        <h3 class="card-title text-center">Login Here</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="uname">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" [(ngModel)]="upwd">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-#558b2f light-green darken-3 btn-block btn-lg" (click)="login({uname:uname,upwd:upwd})">Login</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <!-- Empty -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Footer -->
+<div class="p-3 bg-#a1887f brown lighten-2 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Copyright &copy; , 2018</h3>
+                <p>All Rights Reserved</p>
+                <p>Developed & Maintained by
+                    <a class="text-warning" href="https://github.com/ps0305" target="_blank">
+                        <i class="fa fa-user-circle"></i> Pankaj Singh
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
