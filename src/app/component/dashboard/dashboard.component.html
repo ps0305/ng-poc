@@ -1,11 +1,18 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <!-- Navbar content -->
-    <button type="button" class="btn btn-link">Link</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <a [routerLink] = "['about']"><b>About</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <a [routerLink] = "['portfolio']"><b>Portfolio</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <a [routerLink] = "['contact']"><b>Contact</b></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <button class="btn btn-danger" (click) = "logout()">Logout</button>
-  </nav>
-<br><br>
+  <!-- Navbar content -->
+
+  <a [routerLink]="['about']">
+    <b>About</b>
+  </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <a [routerLink]="['portfolio']">
+    <b>Portfolio</b>
+  </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <a [routerLink]="['contact']">
+    <b>Contact</b>
+  </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</nav>
+<br>
+<br>
 
 <router-outlet></router-outlet>
