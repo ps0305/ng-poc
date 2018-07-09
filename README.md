@@ -1,4 +1,5 @@
-![angular-card](https://user-images.githubusercontent.com/34129569/41152709-1f6e8966-6b32-11e8-89d2-f791d638df7c.png)
+![capture](https://user-images.githubusercontent.com/34129569/42463497-e95a6a70-83c3-11e8-8654-29d849b5c1d4.JPG)
+
 
 # PocAngular2
 
