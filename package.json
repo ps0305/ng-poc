@@ -24,6 +24,7 @@
     "body-parser": "^1.18.3",
     "core-js": "^2.4.1",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
     "jwt-simple": "^0.5.1",
     "mongodb": "2.2.32",
     "mysql": "^2.15.0",
