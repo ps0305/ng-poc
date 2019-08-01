@@ -9,18 +9,17 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class AboutComponent implements OnInit {
 
-    private _result:any;
+  private _result:any;
   constructor(private _service:DashboardService) { }
 
   ngOnInit() {
-    this._service.aboutData().subscribe(res=>this._result=res,
-    (err:HttpErrorResponse)=>{
-      if(err.error instanceof Error){
+    this._service.aboutData().subscribe( res => this._result = res,
+    (err: HttpErrorResponse) => {
+      if (err.error instanceof Error){
         console.log("4XX Error");
-      }else{
+      } else {
         console.log("5XX Error");
       }
     })
   }
-
 }

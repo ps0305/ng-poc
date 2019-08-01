@@ -33,7 +33,7 @@ import {FormsModule} from "@angular/forms";
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DashboardService,LoginService],
+  providers: [DashboardService, LoginService],
   bootstrap: [IndexComponent]
 })
 export class AppModule { }
