@@ -23,7 +23,7 @@
     "@angular/router": "^5.2.0",
     "body-parser": "^1.18.3",
     "core-js": "^2.4.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "jwt-simple": "^0.5.3",
     "mongodb": "3.1.13",
     "mysql": "^2.15.0",
